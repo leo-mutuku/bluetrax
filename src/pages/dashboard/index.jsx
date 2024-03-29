@@ -17,6 +17,32 @@ const assetStatus = [
   { value: 40, label: "Active" },
   { value: 60, label: "Yard", color: "orange" },
 ];
+const fleetMileage = [
+  { value: 21, label: "Garage", color: "red" },
+  { value: 40, label: "Active" },
+  { value: 60, label: "Yard", color: "orange" },
+];
+const totalViolations = [
+  { value: 50, label: "Night Drive", color: "red" },
+  { value: 615, label: "Harsh Acceleration" },
+  { value: 610, label: "Harsh Braking", color: "orange" },
+  { value: 45, label: "Spending", color: "orange" },
+];
+const licenses = [
+  { value: 21, label: "Garage", color: "red" },
+  { value: 40, label: "Active" },
+  { value: 60, label: "Yard", color: "orange" },
+];
+const alertSummary = [
+  { value: 21, label: "Garage", color: "red" },
+  { value: 40, label: "Active" },
+  { value: 60, label: "Yard", color: "orange" },
+];
+const assetServiceSummary = [
+  { value: 21, label: "Garage", color: "red" },
+  { value: 40, label: "Active" },
+  { value: 60, label: "Yard", color: "orange" },
+];
 
 const Dashboard = () => {
   const [dateRange, setDateRange] = useState("dd-mm-yyyy - dd-mm-yyyy");
@@ -73,7 +99,7 @@ const Dashboard = () => {
                         </Typography>
                       </Stack>
                       <Stack sx={{ alignItems: "center" }}>
-                        <PieChart data={assetStatus.assetStatus} />
+                        <PieChart data={assetStatus} />
                       </Stack>
                       <Stack sx={{ alignItems: "flex-end", marginTop: "37px" }}>
                         <ButtonWithIcon buttonName={"Current Status"} />
@@ -129,7 +155,7 @@ const Dashboard = () => {
                         </Typography>
                       </Stack>
                       <Stack sx={{ alignItems: "center" }}>
-                        <PieChart />
+                        <PieChart data={totalViolations} />
                       </Stack>
                       <Stack sx={{ alignItems: "flex-end", marginTop: "37px" }}>
                         <ButtonWithIcon buttonName={"Violations"} />
@@ -158,7 +184,7 @@ const Dashboard = () => {
                         </Typography>
                       </Stack>
                       <Stack sx={{ alignItems: "center" }}>
-                        <PieChart />
+                        <PieChart data={assetStatus} />
                       </Stack>
                       <Stack sx={{ alignItems: "flex-end" }}>
                         <ButtonWithIcon buttonName={"Current Status"} />
@@ -214,7 +240,7 @@ const Dashboard = () => {
                         </Typography>
                       </Stack>
                       <Stack sx={{ alignItems: "center" }}>
-                        <PieChart />
+                        <PieChart data={assetStatus} />
                       </Stack>
                       <Stack sx={{ alignItems: "flex-end" }}>
                         <ButtonWithIcon buttonName={"Violations"} />

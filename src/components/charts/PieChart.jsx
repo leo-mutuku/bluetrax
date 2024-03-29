@@ -4,12 +4,6 @@ import { DefaultChartsLegend } from "@mui/x-charts/ChartsLegend";
 import { useDrawingArea } from "@mui/x-charts/hooks";
 import { styled } from "@mui/material/styles";
 
-const data = [
-  { value: 21, label: "Garage", color: "red" },
-  { value: 40, label: "Active" },
-  { value: 60, label: "Yard", color: "orange" },
-];
-
 const size = {
   width: 300,
   height: 200,
@@ -31,7 +25,7 @@ function PieCenterLabel({ children }) {
   );
 }
 
-export default function PieChartWithCenterLabel() {
+export default function PieChartWithCenterLabel({ data }) {
   const [isHidden, setIsHidden] = React.useState(true);
   return (
     <PieChart
@@ -51,7 +45,17 @@ export default function PieChartWithCenterLabel() {
           endAngle: 180,
         },
       ]}
-      slotProps={{ legend: { hidden: false, boxWidth: 50, boxHeight: 40 } }}
+      slotProps={{
+        legend: {
+          hidden: false,
+          labelStyle: {
+            fontSize: 10,
+            fill: "#11388e",
+            fontWeight: "bold",
+          },
+          position: { vertical: "top", horizontal: "right" },
+        },
+      }}
       sx={{
         [`& .${pieArcLabelClasses.root}`]: {
           fill: "white",
