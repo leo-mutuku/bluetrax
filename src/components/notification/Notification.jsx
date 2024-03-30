@@ -9,6 +9,9 @@ import IconButton from "@mui/material/IconButton";
 import CommentIcon from "@mui/icons-material/Comment";
 import BatteryAlertIcon from "@mui/icons-material/BatteryAlert";
 import { IoIosInformationCircle } from "react-icons/io";
+import { MdSpeed } from "react-icons/md";
+import { HiLightBulb } from "react-icons/hi";
+import { messages } from "../../data/notification";
 
 export default function Notification() {
   const [checked, setChecked] = React.useState([0]);
@@ -27,8 +30,21 @@ export default function Notification() {
   };
 
   return (
-    <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
-      {[0, 1, 2, 3].map((value) => {
+    <List
+      sx={{
+        width: "100%",
+        maxWidth: 360,
+        bgcolor: "background.paper",
+        maxHeight: "250px",
+        overflow: "scroll",
+        overflowX: "hidden",
+        scrollbar: { width: "15px", height: "15px" },
+        scrollbarThumb: { background: "blue" },
+        scrollbarTrack: { background: "#ccc" },
+        scrollbarThumbHover: { background: "#888" },
+      }}
+    >
+      {messages.map((value) => {
         const labelId = `checkbox-list-label-${value}`;
 
         return (
@@ -48,35 +64,47 @@ export default function Notification() {
               dense
             >
               <ListItemIcon sx={{}}>
-                <BatteryAlertIcon />
+                <BatteryAlertIcon
+                  style={{
+                    color: "white",
+                    background: "green",
+                    padding: "3px",
+                  }}
+                />
               </ListItemIcon>
-              <ListItemText id={labelId} style={{ lineHeight: "0.83" }}>
+              <ListItemText id={value.id} style={{ lineHeight: "0.80" }}>
                 <p
                   style={{
-                    fontSize: "9px",
+                    fontSize: "10px",
                     marginBottom: "0px",
                     marginTop: "0px",
+                    fontWeight: "900 !important",
+                    color: "#ccc !important",
                   }}
                 >
-                  KBL 175G
+                  {value.vehicle}
                 </p>
                 <p
                   style={{
                     fontSize: "9px",
                     marginBottom: "0px",
                     marginTop: "0px",
+                    fontWeight: "900 !important",
+                    color: "#ccc !important",
                   }}
                 >
-                  10/02/2023
-                </p>{" "}
+                  {value.date}
+                </p>
                 <p
                   style={{
                     fontSize: "9px",
                     marginBottom: "0px",
                     marginTop: "0px",
+                    fontWeight: "900 !important",
+                    color: "#ccc !important",
                   }}
                 >
-                  Kapenguria Depot
+                  {value.depot}
                 </p>
               </ListItemText>
             </ListItemButton>
