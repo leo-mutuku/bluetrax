@@ -29,6 +29,49 @@ export default function Notification() {
     setChecked(newChecked);
   };
 
+  const formatTextKey = (key) => {
+    return key === "vehicle" ? (
+      <></>
+    ) : alert === "failure" ? (
+      "red"
+    ) : alert === "normal" ? (
+      "blue"
+    ) : (
+      "pink"
+    );
+  };
+
+  const formatIcon = (alert) => {
+    return alert === "success" ? (
+      <HiLightBulb
+        size={25}
+        style={{
+          color: "white",
+          background: "green",
+          padding: "5px",
+        }}
+      />
+    ) : alert === "failure" ? (
+      <MdSpeed
+        size={25}
+        style={{
+          color: "white",
+          background: "red",
+          padding: "5px",
+        }}
+      />
+    ) : (
+      <HiLightBulb
+        size={25}
+        style={{
+          color: "white",
+          background: "blue",
+          padding: "5px",
+        }}
+      />
+    );
+  };
+
   return (
     <List
       sx={{
@@ -63,15 +106,7 @@ export default function Notification() {
               onClick={handleToggle(value)}
               dense
             >
-              <ListItemIcon sx={{}}>
-                <BatteryAlertIcon
-                  style={{
-                    color: "white",
-                    background: "green",
-                    padding: "3px",
-                  }}
-                />
-              </ListItemIcon>
+              <ListItemIcon sx={{}}>{formatIcon(value.alert)}</ListItemIcon>
               <ListItemText id={value.id} style={{ lineHeight: "0.80" }}>
                 <p
                   style={{
