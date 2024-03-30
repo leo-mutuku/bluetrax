@@ -56,6 +56,19 @@ const TopMenu = () => {
         >
           <Typography>Analytics</Typography>{" "}
         </NavLink>
+        <NavLink
+          style={{ color: "white", textDecoration: "none" }}
+          className={({ isActive, isPending, isTransitioning }) => {
+            return {
+              fontWeight: isActive ? "bold" : "",
+              color: isPending ? "red" : "black",
+              visualViewport: isTransitioning ? "slide" : "",
+            };
+          }}
+          to={"/modal"}
+        >
+          <Typography>Modal</Typography>{" "}
+        </NavLink>
       </Box>
     </Box>
   );

@@ -11,6 +11,7 @@ import AreaLineChart from "../../components/charts/AreaLineChart";
 import { CgProfile } from "react-icons/cg";
 import SingleDate from "../../components/form/SingleDate";
 import ButtonWithIcon from "../../components/form/ButtonWithIcon";
+import Notification from "../../components/notification/Notification";
 
 const assetStatus = [
   { value: 21, label: "Garage", color: "red" },
@@ -49,12 +50,12 @@ const Dashboard = () => {
   return (
     <>
       <Box gridColumn="span 8" gridRow="span 2">
-        <Box style={{ margin: "0px 3%" }} gridColumn="span 12">
+        <Box style={{ margin: "0px 2%" }} gridColumn="span 12">
           <Row container={"true"}>
             <Col
               xs={12}
               sm={12}
-              md={10}
+              md={9}
               style={{ borderRight: "1px solid #ccc" }}
             >
               <Typography
@@ -81,12 +82,12 @@ const Dashboard = () => {
 
               <Row>
                 <Col xs={12} sm={6} md={4}>
-                  <Box py={3} px={1}>
+                  <Box py={3}>
                     <Box
                       sx={{
                         background: " #e6f2ff",
                         padding: "15px",
-                        minHeight: "350px",
+                        minHeight: "300px",
                       }}
                     >
                       <Stack sx={{ alignItems: "flex-start" }}>
@@ -101,19 +102,19 @@ const Dashboard = () => {
                       <Stack sx={{ alignItems: "center" }}>
                         <PieChart data={assetStatus} />
                       </Stack>
-                      <Stack sx={{ alignItems: "flex-end", marginTop: "37px" }}>
+                      <Stack sx={{ alignItems: "flex-end", marginTop: "10px" }}>
                         <ButtonWithIcon buttonName={"Current Status"} />
                       </Stack>
                     </Box>
                   </Box>
                 </Col>
                 <Col xs={12} sm={6} md={4}>
-                  <Box py={3} px={1}>
+                  <Box py={3}>
                     <Box
                       sx={{
                         background: " #e6f2ff",
                         padding: "15px",
-                        minHeight: "350px",
+                        minHeight: "300px",
                       }}
                     >
                       <Stack sx={{ alignItems: "flex-start" }}>
@@ -137,12 +138,12 @@ const Dashboard = () => {
                   </Box>
                 </Col>
                 <Col xs={12} sm={6} md={4}>
-                  <Box py={3} px={1}>
+                  <Box py={3}>
                     <Box
                       sx={{
                         background: " #e6f2ff",
                         padding: "15px",
-                        minHeight: "350px",
+                        minHeight: "300px",
                       }}
                     >
                       <Stack sx={{ alignItems: "flex-start" }}>
@@ -157,7 +158,7 @@ const Dashboard = () => {
                       <Stack sx={{ alignItems: "center" }}>
                         <PieChart data={totalViolations} />
                       </Stack>
-                      <Stack sx={{ alignItems: "flex-end", marginTop: "37px" }}>
+                      <Stack sx={{ alignItems: "flex-end", marginTop: "10px" }}>
                         <ButtonWithIcon buttonName={"Violations"} />
                       </Stack>
                     </Box>
@@ -166,7 +167,7 @@ const Dashboard = () => {
               </Row>
               <Row>
                 <Col xs={12} sm={6} md={4}>
-                  <Box py={3} px={1}>
+                  <Box py={3}>
                     <Box
                       sx={{
                         background: " #e6f2ff",
@@ -193,7 +194,7 @@ const Dashboard = () => {
                   </Box>
                 </Col>
                 <Col xs={12} sm={6} md={4}>
-                  <Box py={3} px={1}>
+                  <Box py={3}>
                     <Box
                       sx={{
                         background: " #e6f2ff",
@@ -222,7 +223,7 @@ const Dashboard = () => {
                   </Box>
                 </Col>
                 <Col xs={12} sm={6} md={4}>
-                  <Box py={3} px={1}>
+                  <Box py={3}>
                     <Box
                       sx={{
                         background: " #e6f2ff",
@@ -250,20 +251,15 @@ const Dashboard = () => {
                 </Col>
               </Row>
             </Col>
-            <Col xs={12} sm={6} md={2}>
-              <Box p-3>
-                <Box p-2 px={2}>
+            <Col xs={12} sm={6} md={3}>
+              <Box>
+                <Box>
                   <Stack
                     sx={{
-                      padding: "8px",
                       alignItems: "center",
                     }}
                   >
-                    <Stack
-                      direction="row"
-                      spacing={1}
-                      sx={{ alignItems: "center" }}
-                    >
+                    <Stack direction="row" sx={{ alignItems: "center" }}>
                       <CgProfile size={150} color="#ccc" />
                     </Stack>
                     <Stack
@@ -274,24 +270,31 @@ const Dashboard = () => {
                         fontWeight: "400",
                       }}
                     >
-                      <Typography variant="subtitle2">
+                      <Typography variant="subtitle1" color={"#11388e"}>
                         Hi welcome, David.{" "}
                       </Typography>
                     </Stack>
                   </Stack>
                   <Stack
-                    py={2}
+                    pt={2}
                     sx={{
                       alignItems: "center",
                       borderTop: "1px solid #ccc",
                     }}
                   >
                     <Typography
-                      variant="subtitle2"
+                      variant="button"
+                      display="block"
+                      gutterBottom
+                      color={"#898686"}
+                      fontWeight={900}
                       sx={{ fontSize: "12px", fontWeight: "700" }}
                     >
                       RECENT NOTIFICATIONS
                     </Typography>
+                  </Stack>
+                  <Stack>
+                    <Notification />
                   </Stack>
                 </Box>
               </Box>
