@@ -1,6 +1,7 @@
 import * as React from "react";
 import { LineChart } from "@mui/x-charts/LineChart";
 import { Box, Stack } from "@mui/material";
+import { green, red } from "@mui/material/colors";
 
 const uData = [1, 4, 5, 9, 10, 13, 14];
 const xLabels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
@@ -28,11 +29,17 @@ export default function AreaLineChart() {
             },
           ]}
           sx={{
-            ".MuiLineElement-root": {
-              display: "none",
+            "& .MuiLineElement-root": {
+              stroke: "#0d6efda8",
+              opacity: 0.5,
             },
+            "& .MuiAreaElement-root": {
+              fill: "#3498ff61",
+              opacity: 0.5,
+            },
+            "$ .MuiLabel-root": { fill: "#0d6efda8" },
           }}
-        />
+        ></LineChart>
       </Box>
     </Stack>
   );

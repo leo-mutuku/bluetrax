@@ -1,3 +1,11 @@
 @import "rsuite/dist/rsuite.css";
 
-#root{ padding: 10px; }
+.rs-picker-daterange .rs-input-group-addon {
+
+    color: #4747cf;
+}
+
+.rs-picker-date .rs-input-group-addon {
+
+    color: #34349f;
+}

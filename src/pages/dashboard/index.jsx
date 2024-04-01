@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Row, Col } from "react-bootstrap";
 import { Box, Typography, Grid, Card, Stack } from "@mui/material";
-import Profile from "../../assets/leo.jpeg";
 import InputWithIcon from "../../components/form/InputWithIcon";
 import SearchButtonWrapper from "../../components/form/SearchButtonWrapper";
 import DateResponsiveWrapper from "../../components/form/DateResponsiveWrapper";
@@ -12,6 +11,7 @@ import { CgProfile } from "react-icons/cg";
 import SingleDate from "../../components/form/SingleDate";
 import ButtonWithIcon from "../../components/form/ButtonWithIcon";
 import Notification from "../../components/notification/Notification";
+import SimplePieChart from "../../components/charts/SimplePieChart";
 
 const assetStatus = [
   { value: 21, label: "Garage", color: "red" },
@@ -241,7 +241,7 @@ const Dashboard = () => {
                         </Typography>
                       </Stack>
                       <Stack sx={{ alignItems: "center" }}>
-                        <PieChart data={assetStatus} />
+                        <SimplePieChart />
                       </Stack>
                       <Stack sx={{ alignItems: "flex-end" }}>
                         <ButtonWithIcon buttonName={"Violations"} />

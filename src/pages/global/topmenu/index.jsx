@@ -52,7 +52,7 @@ const TopMenu = () => {
               visualViewport: isTransitioning ? "slide" : "",
             };
           }}
-          to={"/analitics"}
+          to={"/analytics"}
         >
           <Typography>Analytics</Typography>{" "}
         </NavLink>

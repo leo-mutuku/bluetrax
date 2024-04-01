@@ -17,12 +17,21 @@ const StyledText = styled("text")(({ theme }) => ({
   fontSize: 14,
 }));
 
-function PieCenterLabel({ children }) {
+function PieCenterLabel({ item, title }) {
   const { width, height, left, top } = useDrawingArea();
   return (
-    <StyledText x={left + width / 2} y={top + height / 2}>
-      {children}
-    </StyledText>
+    <>
+      <StyledText
+        x={left + width / 2}
+        y={top + height / 2.2}
+        sx={{ fontWeight: "600", fontSize: "20px" }}
+      >
+        121
+      </StyledText>
+      <StyledText x={left + width / 2} y={top + height / 1.8}>
+        Total
+      </StyledText>
+    </>
   );
 }
 
@@ -39,15 +48,15 @@ export default function PieChartWithCenterLabel({ data }) {
           series={[
             {
               data,
-              innerRadius: 30,
+              innerRadius: 45,
               arcLabel: (item) => {
-                return `${item.value}`;
+                return `${item.value} `;
               },
 
-              outerRadius: 50,
-              paddingAngle: 0,
-              cornerRadius: 0,
-              arcLabelMinAngle: 20,
+              outerRadius: 70,
+
+              arcLabelMinAngle: 0,
+              arcLabelRadius: 55,
               startAngle: -180,
               endAngle: 180,
             },
@@ -56,19 +65,25 @@ export default function PieChartWithCenterLabel({ data }) {
             legend: {
               hidden: false,
               labelStyle: {
-                fontSize: 10,
+                fontSize: 12,
+
                 fill: "#11388e",
                 fontWeight: "bold",
               },
+              padding: 2,
               position: { vertical: "top", horizontal: "right" },
+              itemMarkWidth: 10,
+              itemMarkHeight: 10,
+              markGap: 2,
+              itemGap: 3,
             },
           }}
           sx={{
             [`& .${pieArcLabelClasses.root}`]: {
               fill: "white",
               fontSize: 12,
-              fontWeight: "bold",
-              borderRadius: "1px solid #ccc",
+              fontWeight: "500",
+              backgroundColor: "rgb(130, 50, 29)",
             },
           }}
           defs={[
@@ -93,7 +108,7 @@ export default function PieChartWithCenterLabel({ data }) {
           ]}
           {...size}
         >
-          <PieCenterLabel>121 Total</PieCenterLabel>
+          <PieCenterLabel> </PieCenterLabel>
         </PieChart>
       </Box>
     </Stack>

@@ -4,7 +4,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import Checkbox from "@mui/material/Checkbox";
+import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import CommentIcon from "@mui/icons-material/Comment";
 import BatteryAlertIcon from "@mui/icons-material/BatteryAlert";
@@ -12,6 +12,8 @@ import { IoIosInformationCircle } from "react-icons/io";
 import { MdSpeed } from "react-icons/md";
 import { HiLightBulb } from "react-icons/hi";
 import { messages } from "../../data/notification";
+import { IoMdFlashlight } from "react-icons/io";
+import { PiEngineFill } from "react-icons/pi";
 
 export default function Notification() {
   const [checked, setChecked] = React.useState([0]);
@@ -42,17 +44,8 @@ export default function Notification() {
   };
 
   const formatIcon = (alert) => {
-    return alert === "success" ? (
-      <HiLightBulb
-        size={25}
-        style={{
-          color: "white",
-          background: "green",
-          padding: "5px",
-        }}
-      />
-    ) : alert === "failure" ? (
-      <MdSpeed
+    return alert === "failure" ? (
+      <BatteryAlertIcon
         size={25}
         style={{
           color: "white",
@@ -60,12 +53,30 @@ export default function Notification() {
           padding: "5px",
         }}
       />
-    ) : (
-      <HiLightBulb
+    ) : alert === "normal" ? (
+      <MdSpeed
         size={25}
         style={{
           color: "white",
-          background: "blue",
+          background: "	 #00e6ac",
+          padding: "5px",
+        }}
+      />
+    ) : alert === "update" ? (
+      <PiEngineFill
+        size={25}
+        style={{
+          color: "white",
+          background: " #ff9900",
+          padding: "5px",
+        }}
+      />
+    ) : (
+      <IoMdFlashlight
+        size={25}
+        style={{
+          color: "white",
+          background: " #ff531a",
           padding: "5px",
         }}
       />
@@ -108,39 +119,39 @@ export default function Notification() {
             >
               <ListItemIcon sx={{}}>{formatIcon(value.alert)}</ListItemIcon>
               <ListItemText id={value.id} style={{ lineHeight: "0.80" }}>
-                <p
-                  style={{
+                <Typography
+                  sx={{
                     fontSize: "10px",
                     marginBottom: "0px",
                     marginTop: "0px",
                     fontWeight: "900 !important",
-                    color: "#ccc !important",
+                    color: "#9d9797 !important;",
                   }}
                 >
                   {value.vehicle}
-                </p>
-                <p
-                  style={{
+                </Typography>
+                <Typography
+                  sx={{
                     fontSize: "9px",
                     marginBottom: "0px",
                     marginTop: "0px",
                     fontWeight: "900 !important",
-                    color: "#ccc !important",
+                    color: "#878585 !important",
                   }}
                 >
                   {value.date}
-                </p>
-                <p
-                  style={{
+                </Typography>
+                <Typography
+                  sx={{
                     fontSize: "9px",
                     marginBottom: "0px",
                     marginTop: "0px",
                     fontWeight: "900 !important",
-                    color: "#ccc !important",
+                    color: "#10c8c8",
                   }}
                 >
                   {value.depot}
-                </p>
+                </Typography>
               </ListItemText>
             </ListItemButton>
           </ListItem>

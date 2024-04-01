@@ -1,20 +1,21 @@
 export const messages = [
   {
     id: 1,
-    vehicle: "KBL 765 G",
-    depot: "Kapenguri Depot",
-    date: "10/02/2023 : 10:00 AM",
-    message: "Vehicle has been serviced successfully.",
-    alert: "success",
-  },
-  {
-    id: 2,
     vehicle: "KCH 465 Z",
     depot: "Mulot Depot",
     date: "10/02/2023 : 9:00 AM",
     message: "Vehicle got punchured on the way to the depot.",
     alert: "failure",
   },
+  {
+    id: 2,
+    vehicle: "KBL 765 G",
+    depot: "Kapenguri Depot",
+    date: "10/02/2023 : 10:00 AM",
+    message: "Vehicle has been serviced successfully.",
+    alert: "success",
+  },
+
   {
     id: 3,
     vehicle: "KDD 983 M",
