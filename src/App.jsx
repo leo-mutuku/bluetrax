@@ -17,7 +17,7 @@ const App = () => {
         <Route path="tracking" element={<Tracking />} />
         <Route path="analytics" element={<Analytics />} />
         <Route path="modal" element={<Modal />} />
-        <Route path="signup" element={<Signup />} />
+        <Route path="form" element={<Signup />} />
         <Route path="*" element={<div>404</div>} />
       </Routes>
     </>

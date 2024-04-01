@@ -71,6 +71,7 @@ const Signup = () => {
                   onSubmit={(values) => {
                     try {
                       console.log(values);
+                      alert("Form submitted");
                     } catch (error) {}
                   }}
                 >

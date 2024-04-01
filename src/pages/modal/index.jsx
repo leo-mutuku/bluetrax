@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Row, Col } from "react-bootstrap";
 import { Box, Typography, Grid, Card, Stack } from "@mui/material";
 import Item from "@mui/material/Grid";
@@ -11,22 +11,27 @@ import PieChart from "../../components/charts/PieChart";
 import SearchIcon from "@mui/icons-material/Search";
 import AreaLineChart from "../../components/charts/AreaLineChart";
 import SimpleTable from "../../components/table/SimpleTable";
+import PopupWrapper from "../../components/popup";
 
 const Modal = () => {
+  const [openPopup, setOpenPopup] = useState();
   return (
     <>
       <Box gridColumn="span 8" gridRow="span 2">
         <Box style={{ margin: "0px 3%" }} gridColumn="span 12">
           <Row container={"true"}>
             <Col xs={12} sm={12} md={9}>
-              <Typography
-                variant="h5"
-                pt={2}
-                pb={3}
-                borderBottom={"1px solid #8080802e"}
-              >
-                Tracking -- This is a simple headless table Material ui table
-              </Typography>
+              <Stack>
+                <Typography
+                  variant="h5"
+                  pt={2}
+                  pb={3}
+                  borderBottom={"1px solid #8080802e"}
+                >
+                  Table
+                </Typography>
+                <Stack></Stack>
+              </Stack>
               <Stack>
                 <SimpleTable />
               </Stack>

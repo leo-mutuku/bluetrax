@@ -21,6 +21,8 @@ import Switch from "@mui/material/Switch";
 import DeleteIcon from "@mui/icons-material/Delete";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import { visuallyHidden } from "@mui/utils";
+import { Button } from "@mui/material";
+import PopupWrapper from "../popup";
 
 function createData(id, name, calories, fat, carbs, protein) {
   return {
@@ -65,10 +67,6 @@ function getComparator(order, orderBy) {
     : (a, b) => -descendingComparator(a, b, orderBy);
 }
 
-// Since 2020 all major browsers ensure sort stability with Array.prototype.sort().
-// stableSort() brings sort stability to non-modern browsers (notably IE11). If you
-// only support modern browsers you can replace stableSort(exampleArray, exampleComparator)
-// with exampleArray.slice().sort(exampleComparator)
 function stableSort(array, comparator) {
   const stabilizedThis = array.map((el, index) => [el, index]);
   stabilizedThis.sort((a, b) => {
@@ -178,6 +176,11 @@ EnhancedTableHead.propTypes = {
 
 function EnhancedTableToolbar(props) {
   const { numSelected } = props;
+  const [openPopup, setOpenPopup] = React.useState(false);
+  const handleOpenPopup = () => {
+    setOpenPopup(true);
+  };
+  const title = "Add item";
 
   return (
     <Toolbar
@@ -220,12 +223,13 @@ function EnhancedTableToolbar(props) {
           </IconButton>
         </Tooltip>
       ) : (
-        <Tooltip title="Filter list">
-          <IconButton>
-            <FilterListIcon />
-          </IconButton>
-        </Tooltip>
+        <Button onClick={handleOpenPopup}>Add</Button>
       )}
+      <PopupWrapper
+        openPopup={openPopup}
+        setOpenPopup={setOpenPopup}
+        title={title}
+      />
     </Toolbar>
   );
 }
@@ -241,6 +245,7 @@ export default function EnhancedTable() {
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const [openPopup, setOpenPopup] = React.useState(false);
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === "asc";
@@ -388,6 +393,7 @@ export default function EnhancedTable() {
         control={<Switch checked={dense} onChange={handleChangeDense} />}
         label="Dense padding"
       />
+      <PopupWrapper openPopup={openPopup} setOpenPopup={setOpenPopup} />
     </Box>
   );
 }
