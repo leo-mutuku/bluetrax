@@ -8,12 +8,25 @@ import InputWithIcon from "../../components/form/InputWithIcon";
 import SearchButtonWrapper from "../../components/form/SearchButtonWrapper";
 import SearchIcon from "@mui/icons-material/Search";
 import TextFieldWrapper from "../../components/form/formyup/TextField";
+import SelectWrapper from "../../components/form/formyup/Select";
+import Countries from "../../data/listContries.json";
+import DateTimePickerWrapper from "../../components/form/formyup/DateTimePicker";
+import CheckBoxWrapper from "../../components/form/formyup/CheckBox";
 
 const SINGUP_FORM_INITIAL_STATE = {
   firstName: "",
   lastName: "",
   email: "",
   phone: "",
+  addressLine1: "",
+  addressLine2: "",
+  city: "",
+  state: "",
+  country: "",
+  arrrivalDate: "",
+  departureDate: "",
+  message: "",
+  termsOfService: false,
 };
 const SINGUP_FORM_VALIDATION_SCHEMA = Yup.object().shape({
   firstName: Yup.string().required("First Name is required"),
@@ -28,6 +41,12 @@ const SINGUP_FORM_VALIDATION_SCHEMA = Yup.object().shape({
   city: Yup.string().required("City is required"),
   state: Yup.string().required("State is required"),
   country: Yup.string().required("Country is required"),
+  arrivalDate: Yup.date().required("Arrival Date is required"),
+  departureDate: Yup.date().required("Departure Date is required"),
+  message: Yup.string(),
+  termsOfService: Yup.boolean()
+    .oneOf([true], "You must accept the terms of service")
+    .required("You must accept the terms of service"),
 });
 
 const Signup = () => {
@@ -75,13 +94,13 @@ const Signup = () => {
                       <Grid item xs={12}>
                         <Typography variant="h6">Address</Typography>
                       </Grid>
-                      <Grid item xs={6}>
+                      <Grid item xs={12}>
                         <TextFieldWrapper
                           name="addressLine1"
                           label="Address Line 1"
                         />
                       </Grid>
-                      <Grid item xs={6}>
+                      <Grid item xs={12}>
                         <TextFieldWrapper
                           name="addressLine2"
                           label="Address Line 2"
@@ -93,8 +112,42 @@ const Signup = () => {
                       <Grid item xs={6}>
                         <TextFieldWrapper name="state" label="State" />
                       </Grid>
+                      <Grid item xs={12}>
+                        <SelectWrapper
+                          name="country"
+                          label="Country"
+                          options={Countries}
+                        />
+                      </Grid>
+                      <Grid item xs={12}>
+                        <Typography variant="h6">Dates</Typography>
+                      </Grid>
                       <Grid item xs={6}>
-                        <TextFieldWrapper name="country" label="Country" />
+                        <DateTimePickerWrapper
+                          name="arrivalDate"
+                          label="Arrival Date"
+                        />
+                      </Grid>
+                      <Grid item xs={6}>
+                        <DateTimePickerWrapper
+                          name="departureDate"
+                          label="Departure Date"
+                        />
+                      </Grid>
+                      <Grid item xs={12}>
+                        <TextFieldWrapper
+                          name="message"
+                          label="Message"
+                          multiline={true}
+                          rows={4}
+                        />
+                      </Grid>
+                      <Grid item xs={12}>
+                        <CheckBoxWrapper
+                          name="termsOfService"
+                          label="I accept the terms of service"
+                          legend="Terms of Service"
+                        />
                       </Grid>
                       <Grid item xs={12}>
                         <Button
