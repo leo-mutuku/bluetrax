@@ -14,6 +14,7 @@ import Notification from "../../components/notification/Notification";
 import PieChartMedium from "../../components/charts/PieChartMedium";
 import PieChartSmall from "../../components/charts/PieChartSmall";
 import StyleSimpleTable from "../../components/table/StyleSimpleTable";
+import PieChartMedium1 from "../../components/charts/PieChartMedium1";
 
 const assetStatus = [
   { value: 21, label: "Garage", color: " #b30000" },
@@ -27,7 +28,7 @@ const fleetMileage = [
 ];
 const totalViolations = [
   { value: 50, label: "Night Drive", color: "red" },
-  { value: 615, label: "Harsh Acceleration" },
+  { value: 615, label: "Harsh Acc" },
   { value: 610, label: "Harsh Braking", color: "orange" },
   { value: 45, label: "Spending", color: "orange" },
 ];
@@ -160,7 +161,7 @@ const Dashboard = () => {
                         </Typography>
                       </Stack>
                       <Stack sx={{ alignItems: "center" }}>
-                        <PieChartMedium data={totalViolations} />
+                        <PieChartMedium1 data={totalViolations} />
                       </Stack>
                       <Stack sx={{ alignItems: "flex-end", marginTop: "10px" }}>
                         <ButtonWithIcon buttonName={"Violations"} />

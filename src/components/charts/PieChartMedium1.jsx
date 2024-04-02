@@ -35,7 +35,7 @@ function PieCenterLabel({ item, title }) {
   );
 }
 
-export default function PieChartMedium({ data }) {
+export default function PieChartMedium1({ data }) {
   const [isHidden, setIsHidden] = React.useState(true);
   return (
     <Stack
@@ -48,15 +48,15 @@ export default function PieChartMedium({ data }) {
           series={[
             {
               data,
-              innerRadius: 40,
+              innerRadius: 30,
               arcLabel: (item) => {
                 return `${item.value} `;
               },
 
-              outerRadius: 60,
+              outerRadius: 50,
 
               arcLabelMinAngle: 0,
-              arcLabelRadius: 55,
+              arcLabelRadius: 40,
               startAngle: -180,
               endAngle: 180,
             },

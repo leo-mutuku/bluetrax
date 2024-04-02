@@ -12,7 +12,6 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: "rgb(230, 242, 255)",
     color: "#333300",
-    rowHeight: 10,
   },
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,

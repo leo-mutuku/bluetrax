@@ -75,7 +75,7 @@ export default function PieChartWithCenterLabel({ data }) {
               itemMarkWidth: 10,
               itemMarkHeight: 10,
               markGap: 2,
-              itemGap: 3,
+              itemGap: 30,
             },
           }}
           sx={{

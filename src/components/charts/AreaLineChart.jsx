@@ -15,7 +15,7 @@ export default function AreaLineChart() {
     >
       <Box sx={{ flexGrow: 1 }}>
         <LineChart
-          width={320}
+          width={300}
           height={175}
           series={[{ data: uData, area: true, showMark: false }]}
           xAxis={[{ scaleType: "point", data: xLabels, label: "Day" }]}
