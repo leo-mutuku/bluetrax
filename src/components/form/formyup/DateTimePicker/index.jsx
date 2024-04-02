@@ -9,7 +9,6 @@ const DateTimePickerWrapper = ({ name, ...otherProps }) => {
     ...otherProps,
     size: "small",
     fullWidth: true,
-    size: "small",
     variant: "outlined",
     type: "datetime-local",
     InputLabelProps: {
