@@ -27,10 +27,10 @@ const fleetMileage = [
   { value: 60, label: "Yard", color: "orange" },
 ];
 const totalViolations = [
-  { value: 50, label: "Night Drive", color: "red" },
-  { value: 615, label: "Harsh Acc" },
-  { value: 610, label: "Harsh Braking", color: "orange" },
-  { value: 45, label: "Spending", color: "orange" },
+  { value: 50, label: "Night Drive", color: "gray" },
+  { value: 615, label: "Harsh Acc", color: "red" },
+  { value: 610, label: "Harsh Braking", color: "#00e6ac" },
+  { value: 45, label: "Spending", color: " #009999" },
 ];
 const licenses = [
   { value: 500, label: "Ok", color: "#00b300" },

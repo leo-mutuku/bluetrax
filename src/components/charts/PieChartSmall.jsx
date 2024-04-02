@@ -55,7 +55,7 @@ export default function PieChartSmall({ data }) {
 
               outerRadius: 70,
 
-              arcLabelMinAngle: 0,
+              arcLabelMinAngle: 30,
               arcLabelRadius: 55,
               startAngle: -180,
               endAngle: 180,
