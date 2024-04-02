@@ -12,6 +12,7 @@ import SingleDate from "../../components/form/SingleDate";
 import ButtonWithIcon from "../../components/form/ButtonWithIcon";
 import Notification from "../../components/notification/Notification";
 import SimplePieChart from "../../components/charts/SimplePieChart";
+import PieChartMedium from "../../components/charts/PieChartMedium";
 
 const assetStatus = [
   { value: 21, label: "Garage", color: "red" },
@@ -156,7 +157,7 @@ const Dashboard = () => {
                         </Typography>
                       </Stack>
                       <Stack sx={{ alignItems: "center" }}>
-                        <PieChart data={totalViolations} />
+                        <PieChartMedium data={totalViolations} />
                       </Stack>
                       <Stack sx={{ alignItems: "flex-end", marginTop: "10px" }}>
                         <ButtonWithIcon buttonName={"Violations"} />
