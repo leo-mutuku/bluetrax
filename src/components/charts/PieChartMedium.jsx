@@ -40,7 +40,7 @@ export default function PieChartMedium({ data }) {
   return (
     <Stack
       direction="row"
-      sx={{ width: "100%" }}
+      sx={{ width: "90%" }}
       className="custom-y-padding-bottom"
     >
       <Box sx={{ flexGrow: 1 }}>
