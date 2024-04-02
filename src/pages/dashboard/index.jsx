@@ -42,9 +42,10 @@ const alertSummary = [
   { value: 60, label: "Yard", color: "orange" },
 ];
 const assetServiceSummary = [
-  { value: 21, label: "Garage", color: "red" },
-  { value: 40, label: "Active" },
-  { value: 60, label: "Yard", color: "orange" },
+  { value: 50, label: "Overdue", color: " red" },
+  { value: 40, label: "In 1000km", color: " #ffff00" },
+  { value: 615, label: "In 5000km", color: "orange" },
+  { value: 610, label: "In 2500km", color: "#e67300" },
 ];
 
 const Dashboard = () => {
@@ -207,9 +208,16 @@ const Dashboard = () => {
                       <Stack sx={{ alignItems: "flex-start" }}>
                         <Typography
                           variant="subtitle1"
-                          sx={{ color: "rgba(14, 54, 141, 0.99)" }}
+                          sx={{
+                            color: "rgba(14, 54, 141, 0.99)",
+                          }}
                         >
                           Alert Summary
+                        </Typography>
+                      </Stack>
+                      <Stack sx={{ alignItems: "center" }}>
+                        <Typography sx={{ borderBottom: "1px solid #ccc" }}>
+                          .
                         </Typography>
                       </Stack>
                       <Stack sx={{ alignItems: "flex-end" }}>
