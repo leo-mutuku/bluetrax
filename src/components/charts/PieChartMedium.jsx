@@ -56,7 +56,7 @@ export default function PieChartMedium({ data }) {
               outerRadius: 60,
 
               arcLabelMinAngle: 30,
-              arcLabelRadius: 55,
+              arcLabelRadius: 50,
               startAngle: -180,
               endAngle: 180,
             },
