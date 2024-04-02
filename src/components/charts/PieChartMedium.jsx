@@ -6,7 +6,7 @@ import { styled } from "@mui/material/styles";
 import { Box, Stack } from "@mui/material";
 
 const size = {
-  width: 300,
+  width: 250,
   height: 200,
 };
 
