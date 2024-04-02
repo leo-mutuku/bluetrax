@@ -174,7 +174,7 @@ const Dashboard = () => {
                       sx={{
                         background: " #e6f2ff",
                         padding: "15px",
-                        minHeight: "350px",
+                        minHeight: "300px",
                       }}
                     >
                       <Stack sx={{ alignItems: "flex-start" }}>
@@ -201,7 +201,7 @@ const Dashboard = () => {
                       sx={{
                         background: " #e6f2ff",
                         padding: "15px",
-                        minHeight: "350px",
+                        minHeight: "300px",
                       }}
                     >
                       <Stack sx={{ alignItems: "flex-start" }}>
@@ -230,7 +230,7 @@ const Dashboard = () => {
                       sx={{
                         background: " #e6f2ff",
                         padding: "15px",
-                        minHeight: "350px",
+                        minHeight: "300px",
                       }}
                     >
                       <Stack sx={{ alignItems: "flex-start" }}>
