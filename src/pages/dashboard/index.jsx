@@ -11,12 +11,12 @@ import { CgProfile } from "react-icons/cg";
 import SingleDate from "../../components/form/SingleDate";
 import ButtonWithIcon from "../../components/form/ButtonWithIcon";
 import Notification from "../../components/notification/Notification";
-import SimplePieChart from "../../components/charts/SimplePieChart";
 import PieChartMedium from "../../components/charts/PieChartMedium";
+import PieChartSmall from "../../components/charts/PieChartSmall";
 
 const assetStatus = [
-  { value: 21, label: "Garage", color: "red" },
-  { value: 40, label: "Active" },
+  { value: 21, label: "Garage", color: " #b30000" },
+  { value: 40, label: "Active", color: "#009999" },
   { value: 60, label: "Yard", color: "orange" },
 ];
 const fleetMileage = [
@@ -31,9 +31,10 @@ const totalViolations = [
   { value: 45, label: "Spending", color: "orange" },
 ];
 const licenses = [
-  { value: 21, label: "Garage", color: "red" },
-  { value: 40, label: "Active" },
-  { value: 60, label: "Yard", color: "orange" },
+  { value: 500, label: "Ok", color: "#00b300" },
+  { value: 15, label: "In 1 Month", color: "#b30059" },
+  { value: 35, label: "In 2 Months", color: " #009999" },
+  { value: 50, label: "In 4 Months", color: "orange" },
 ];
 const alertSummary = [
   { value: 21, label: "Garage", color: "red" },
@@ -186,7 +187,7 @@ const Dashboard = () => {
                         </Typography>
                       </Stack>
                       <Stack sx={{ alignItems: "center" }}>
-                        <PieChart data={assetStatus} />
+                        <PieChartSmall data={licenses} />
                       </Stack>
                       <Stack sx={{ alignItems: "flex-end" }}>
                         <ButtonWithIcon buttonName={"Current Status"} />
@@ -242,7 +243,7 @@ const Dashboard = () => {
                         </Typography>
                       </Stack>
                       <Stack sx={{ alignItems: "center" }}>
-                        <SimplePieChart />
+                        <PieChartMedium data={assetServiceSummary} />
                       </Stack>
                       <Stack sx={{ alignItems: "flex-end" }}>
                         <ButtonWithIcon buttonName={"Violations"} />
