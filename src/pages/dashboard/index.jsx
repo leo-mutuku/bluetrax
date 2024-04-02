@@ -190,9 +190,9 @@ const Dashboard = () => {
                       <Stack sx={{ alignItems: "center" }}>
                         <PieChartSmall data={licenses} />
                       </Stack>
-                      <Stack sx={{ alignItems: "flex-end" }}>
+                      {/* <Stack sx={{ alignItems: "flex-end" }}>
                         <ButtonWithIcon buttonName={"Current Status"} />
-                      </Stack>
+                      </Stack> */}
                     </Box>
                   </Box>
                 </Col>
@@ -226,9 +226,9 @@ const Dashboard = () => {
                       <Stack sx={{ alignItems: "center" }}>
                         <AreaLineChart />
                       </Stack>
-                      <Stack sx={{ alignItems: "flex-end" }}>
+                      {/* <Stack sx={{ alignItems: "flex-end" }}>
                         <ButtonWithIcon buttonName={"Movement"} />
-                      </Stack>
+                      </Stack> */}
                     </Box>
                   </Box>
                 </Col>
@@ -253,9 +253,9 @@ const Dashboard = () => {
                       <Stack sx={{ alignItems: "center" }}>
                         <PieChartMedium data={assetServiceSummary} />
                       </Stack>
-                      <Stack sx={{ alignItems: "flex-end" }}>
+                      {/* <Stack sx={{ alignItems: "flex-end" }}>
                         <ButtonWithIcon buttonName={"Violations"} />
-                      </Stack>
+                      </Stack> */}
                     </Box>
                   </Box>
                 </Col>
