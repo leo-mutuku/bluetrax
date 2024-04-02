@@ -13,6 +13,7 @@ import ButtonWithIcon from "../../components/form/ButtonWithIcon";
 import Notification from "../../components/notification/Notification";
 import PieChartMedium from "../../components/charts/PieChartMedium";
 import PieChartSmall from "../../components/charts/PieChartSmall";
+import StyleSimpleTable from "../../components/table/StyleSimpleTable";
 
 const assetStatus = [
   { value: 21, label: "Garage", color: " #b30000" },
@@ -223,8 +224,9 @@ const Dashboard = () => {
                       <Stack sx={{ alignItems: "flex-end" }}>
                         <DatePicker />
                       </Stack>
+                      <br></br>
                       <Stack sx={{ alignItems: "center" }}>
-                        <AreaLineChart />
+                        <StyleSimpleTable />
                       </Stack>
                       {/* <Stack sx={{ alignItems: "flex-end" }}>
                         <ButtonWithIcon buttonName={"Movement"} />
